@@ -31,7 +31,6 @@ int main(){
         if (Csockfd<0){
             continue;
         }
-        cout << "有程序接入连接" << inet_ntoa(Caddr_in.sin_addr) << endl;
 
     }
 
