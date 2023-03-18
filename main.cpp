@@ -7,7 +7,11 @@
 #include <thread>
 
 using namespace std;
+void process_conn_server(int s){
+    char buffer[]="D1593076-F4CF-184F-F3D2-1687845AA6EE\n";
+    send(s,buffer, std::strlen(buffer)+1 ,0);
 
+}
 int main(){
     pid_t pid;
     struct sockaddr_in addr_in;
@@ -31,7 +35,9 @@ int main(){
         if (Csockfd<0){
             continue;
         }
-        cout << "卧槽你妈的" <<endl;
+        cout << "有程序接入连接" << inet_ntoa(Caddr_in.sin_addr) << endl;
+        thread t(process_conn_server,Csockfd);
+        t.detach();
     }
 
 }
