@@ -31,7 +31,7 @@ int main(){
         if (Csockfd<0){
             continue;
         }
-
+        cout << "卧槽你妈的" <<endl;
     }
 
 }
