@@ -35,7 +35,7 @@ int main(){
         if (Csockfd<0){
             continue;
         }
-        cout << "有程序接入连接" << inet_ntoa(Caddr_in.sin_addr) << endl;
+        cout << "有程序接入连接1" << inet_ntoa(Caddr_in.sin_addr) << endl;
         thread t(process_conn_server,Csockfd);
         t.detach();
     }
